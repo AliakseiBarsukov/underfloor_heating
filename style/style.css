@@ -7,9 +7,12 @@
 }
 
 body {
-  color: #232020;
+  min-width: 320px;
+  background-color: #fff;
   font-family: Inter, sans-serif;
+  color: #232020;
   font-size: 16px;
+  line-height: 1.5;
 }
 
 h1, h2, p {
@@ -26,10 +29,6 @@ ul, li {
 a {
   color: inherit;
   text-decoration: none;
-  transition: all 0.3s ease-in-out;
-}
-a:hover {
-  opacity: 0.7;
 }
 
 img {
@@ -38,11 +37,22 @@ img {
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   max-width: 1190px;
   margin: 0 auto;
+}
+
+.link {
+  transition: all 0.3s ease-in-out;
+}
+.link:hover {
+  opacity: 0.6;
+}
+
+.btn {
+  padding: 18px 40px;
+  border-radius: 24px;
+  text-transform: uppercase;
+  background-color: #FFC700;
 }
 
 @font-face {
@@ -58,18 +68,64 @@ img {
 .header {
   padding: 18px 0;
 }
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .header__btn {
-  padding: 18px 40px;
   background-color: transparent;
   border: 1px solid #232020;
-  border-radius: 24px;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  text-transform: uppercase;
   transition: all 0.3s ease-in-out;
 }
 .header__btn:hover {
   background-color: #FFD952;
   border-color: transparent;
+}
+
+.footer {
+  padding-bottom: 40px;
+}
+.footer__container {
+  display: grid;
+  grid-template-columns: -webkit-max-content 1fr -webkit-max-content;
+  grid-template-columns: max-content 1fr max-content;
+  gap: 40px 126px;
+  grid-template-areas: "logo social contact" "copyright . developer";
+  padding-top: 50px;
+  border-top: 2px solid #F8F8F8;
+}
+.footer__list {
+  display: flex;
+  flex-direction: column;
+}
+.footer__link_contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer__logo {
+  grid-area: logo;
+}
+.footer__social {
+  grid-area: social;
+  flex-direction: row;
+  gap: 24px;
+  justify-self: end;
+  padding-top: 8px;
+}
+.footer__contact {
+  grid-area: contact;
+  gap: 16px;
+  padding-top: 8px;
+}
+.footer__copyright {
+  grid-area: copyright;
+}
+.footer__developer {
+  grid-area: developer;
+  gap: 8px;
 }/*# sourceMappingURL=style.css.map */
