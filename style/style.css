@@ -55,6 +55,16 @@ img {
   background-color: #FFC700;
 }
 
+.section-offset {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
+
 @font-face {
   font-family: Inter;
   font-weight: 500;
@@ -65,6 +75,27 @@ img {
   font-weight: 400;
   src: local(Inter), url("../fonts/inter-v12-cyrillic_latin-regular.woff2") format("woff2"), url("../fonts/inter-v12-cyrillic_latin-regular.woff") format("woff");
 }
+.header {
+  padding: 18px 0;
+}
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__btn {
+  background-color: transparent;
+  border: 1px solid #232020;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  transition: all 0.3s ease-in-out;
+}
+.header__btn:hover {
+  background-color: #FFD952;
+  border-color: transparent;
+}
+
 .header {
   padding: 18px 0;
 }

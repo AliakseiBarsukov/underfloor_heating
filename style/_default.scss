@@ -55,3 +55,13 @@ img {
   text-transform: uppercase;
   background-color: $yellow;
 }
+
+.section-offset {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
