@@ -20,15 +20,96 @@
 
   <main>
     <section class="hero section-offset">
-      <div class="container"></div>
+      <div class="container">
+        <div class="hero__content grey-block">
+          <h2 class="hero__title">Приносим тепло в&nbsp;каждый дом</h2>
+          <p class="hero__description">Устанавливаем теплые полы в&nbsp;квартирах, офисах и&nbsp;загородных домах.
+          </p>
+          <a href="#calc" class="btn link hero__link">Рассчитать&nbsp;стоимость</a>
+        </div>
+
+        <div class="hero__slider-wrapper">
+          <div class="filling">
+            <div class="filling">
+              <div class="filling hero_image" style="background-image: url('./img/hero_img_01.jpeg');">
+
+              </div>
+              <button class="hero__slider-btn hero__slider-btn_prev"></button>
+              <button class="hero__slider-btn hero__slider-btn_next"></button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="advantages section-offset">
-      <div class="container"></div>
+      <div class="container">
+        <h2 class="advantages__title">Наши преимущества</h2>
+
+        <ul class="advantages__list">
+          <li class="advantages__item">Надежные материалы</li>
+          <li class="advantages__item">опытные монтажники</li>
+          <li class="advantages__item">Регулируемая температура полаи</li>
+          <li class="advantages__item">Защита от замыканий</li>
+          <li class="advantages__item">Гарантия до 10 лет</li>
+        </ul>
+      </div>
     </section>
 
-    <section class="calc section-offset">
-      <div class="container"></div>
+    <section id="calc" class="calc section-offset">
+      <div class="container calc__container">
+        <div class="calc__content grey-block">
+          <h2 class="calc__title">Рассчитайте стоимость</h2>
+
+          <form class="calc__form">
+            <fieldset class="calc__fieldset calc__fieldset_size">
+              <label class="calc__wrapper-input calc__wrapper-input-size">
+                <span class="calc__text">Ширина помещения, м</span>
+                <input type="number" class="calc__input-number" name="width" required>
+              </label>
+
+              <label class="calc__wrapper-input calc__wrapper-input-size">
+                <span class="calc__text">Длина помещения, м</span>
+                <input type="number" class="calc__input-number" name="lenght" required>
+              </label>
+            </fieldset>
+
+            <fieldset class="calc__fieldset calc__fieldset_tariff">
+              <legend class="calc__text calc__text_legend">Тариф</legend>
+              <label class="calc__wrapper-input calc__wrapper-input-tariff">
+                <input class="calc__input-radio" type="radio" name="tariff" value="economy">
+                <span class="calc__label-radio">Эконом</span>
+              </label> 
+
+              <label class="calc__wrapper-input calc__wrapper-input-tariff">
+                <input class="calc__input-radio" type="radio" name="tariff" value="comfort" checked>
+                <span class="calc__label-radio">Комфорт</span>
+              </label> 
+
+              <label class="calc__wrapper-input calc__wrapper-input-tariff">
+                <input class="calc__input-radio" type="radio" name="tariff" value="premium">
+                <span class="calc__label-radio">Премиум</span>
+              </label>
+            </fieldset>
+            <button type="submit" class="btn calc__btn">Рассчитать</button>
+          </form>
+        </div>
+
+        <div class="calc__total">
+          <div class="calc__result-wrapper">
+            <p class="calc__result">
+              <span class="calc__text">Площадь</span>
+              <span class="calc__result-text">35 кв м</span>
+            </p>
+          </div>
+          <div class="calc__result-wrapper">
+            <p class="calc__result">
+              <span class="calc__text">Примерная стоимость</span>
+              <span class="calc__result-text">42590 руб</span>
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
