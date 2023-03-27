@@ -1,0 +1,48 @@
+.advantages {
+
+  // .advantages__container
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  // .advantages__title
+
+  &__title {
+    flex-basis: 50%;
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 130%;
+    text-transform: uppercase;
+    max-width: 480px;;
+  }
+
+  // .advantages__list
+
+  &__list {
+    flex-basis: 50%;
+  }
+
+  // .advantages__item
+
+  &__item {
+    background-image: url('../img/star.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 16px;
+    padding-left: 32px;
+    font-size: 24px;
+    line-height: 130%;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
