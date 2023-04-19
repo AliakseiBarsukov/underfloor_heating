@@ -6,12 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Тёплый пол - Приносим тепло в каждый дом</title>
 
+  <link rel="preload" href="fonts/inter-v12-cyrillic_latin-500.woff2" as="font" crossorigin>
+  <link rel="preload" href="fonts/inter-v12-cyrillic_latin-regular.woff2" as="font" crossorigin>
+
   <link rel="stylesheet" href="style/normalize.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="style/swiper-bundle.min.css">
   <link rel="stylesheet" href="style/style.css">
 
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js" defer></script>
+  <script src="js/swiper-bundle.min.js" defer></script>
   <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -80,7 +83,7 @@
         <div class="calc__content grey-block">
           <h2 class="calc__title title">Рассчитайте стоимость</h2>
 
-          <form class="calc__form">
+          <form class="calc__form js-calc-form">
             <fieldset class="calc__fieldset calc__fieldset_size">
               <label class="calc__wrapper-input calc__wrapper-input-size">
                 <span class="calc__text">Ширина помещения, м</span>
@@ -118,13 +121,13 @@
           <div class="calc__result-wrapper">
             <p class="calc__result">
               <span class="calc__text">Площадь</span>
-              <span class="calc__result-text">35 кв м</span>
+              <span class="calc__result-text js-square">35 кв м</span>
             </p>
           <!-- </div> -->
           <!-- <div class="calc__result-wrapper"> -->
             <p class="calc__result">
               <span class="calc__text">Примерная стоимость</span>
-              <span class="calc__result-text">42590 руб</span>
+              <span class="calc__result-text js-total-price">42590 руб</span>
             </p>
           </div>
         </div>

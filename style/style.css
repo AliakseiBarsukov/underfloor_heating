@@ -25,6 +25,7 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *, ::after, ::before {
@@ -166,11 +167,13 @@ img {
 @font-face {
   font-family: Inter;
   font-weight: 500;
+  font-display: swap;
   src: local(Inter), url("../fonts/inter-v12-cyrillic_latin-500.woff2") format("woff2"), url("../fonts/inter-v12-cyrillic_latin-500.woff") format("woff");
 }
 @font-face {
   font-family: Inter;
   font-weight: 400;
+  font-display: swap;
   src: local(Inter), url("../fonts/inter-v12-cyrillic_latin-regular.woff2") format("woff2"), url("../fonts/inter-v12-cyrillic_latin-regular.woff") format("woff");
 }
 .header {
@@ -566,6 +569,7 @@ img {
   }
 }
 .calc__result-wrapper {
+  display: none;
   flex-basis: 303px;
   padding: 24px;
   background: #FFFFFF;
