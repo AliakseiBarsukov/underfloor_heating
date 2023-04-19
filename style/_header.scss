@@ -1,10 +1,20 @@
 .header {
   padding: 18px 0;
 
+  @include mobile {
+    padding: 16px 0;
+  }
+
   &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  &_logo {
+    @include tablet {
+      width: 124px;
+    }
   }
 
   &__btn {

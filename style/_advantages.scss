@@ -8,6 +8,10 @@
     gap: 10px;
     padding-left: 50px;
     padding-right: 50px;
+
+    @include tablet {
+      flex-direction: column;
+    }
   }
 
   // .advantages__title
@@ -15,10 +19,17 @@
   &__title {
     flex-basis: 50%;
     font-weight: 500;
-    font-size: 44px;
     line-height: 130%;
     text-transform: uppercase;
     max-width: 480px;;
+
+    @include tablet {
+      margin-bottom: 24px;
+    }
+
+    @include mobile {
+      margin-bottom: 16px;
+    }
   }
 
   // .advantages__list
@@ -42,6 +53,19 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    @include laptop {
+      font-size: 20px;
+    }
+
+    @include tablet {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    @include mobile {
+      font-size: 14px;
     }
   }
 }

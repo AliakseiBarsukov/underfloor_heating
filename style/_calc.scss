@@ -4,19 +4,32 @@
 
   &__container {
     display: flex;
-    gap: 10px;
+    gap: var(--gap);
+
+    @include tablet {
+      flex-direction: column;
+      --width-block: 100%;
+    }
   }
 
   // .calc__content
 
   &__content {
-    flex-basis: 50%;
+    width: var(--width-block);
   }
 
   // .calc__title
 
   &__title {
     margin-bottom: 32px;
+
+    @include laptop {
+      margin-bottom: 24px;
+    }
+
+    @include mobile {
+      margin-bottom: 16px;
+    }
   }
 
 
@@ -32,12 +45,33 @@
     &_size {
       margin-bottom: 32px;
       display: flex;
+
+      @include laptop {
+        margin-bottom: 24px;
+      }
+
+      @include mobile {
+        flex-direction: column;
+        margin-bottom: 16px;
+        gap: 10px;
+      }
     }
 
     // .calc__fieldset_tariff
 
     &_tariff {
       margin-bottom: 65px;
+
+      @include laptop {
+        margin-bottom: 34px;
+      }
+
+      @include mobile {
+        flex-direction: column;
+        display: flex;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
     }
   }
 
@@ -54,6 +88,11 @@
     :last-child {
       margin-right: 0;
     }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   // .calc__text
@@ -67,6 +106,10 @@
 
     &_legend {
       margin-bottom: 16px;
+
+      @include tablet {
+        margin-bottom: 8px;
+      }
     }
   }
 
@@ -82,6 +125,16 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
+
+    @include laptop {
+      width: 100%;
+    }
+
+    @include tablet {
+      font-size: 14px;
+      height: 36px;
+      padding: 0 16px;
+    }
   }
 
   // .calc__wrapper-input-tariff
@@ -134,6 +187,10 @@
 
   &__label-radio {
     text-transform: uppercase;
+
+    @include tablet {
+      font-size: 14px;
+    }
   }
 
   // .calc__btn
@@ -144,12 +201,21 @@
   // .calc__total
 
   &__total {
-    flex-basis: 50%;
+    width: var(--width-block);
     display: flex;
     align-items: flex-end;
-    padding: 50px;
+    padding: var(--padding);
     background: #333 url('./../img/calc-bg.jpeg') center/cover no-repeat;
     border-radius: 12px;
+
+    @include tablet {
+      height: 220px;
+      align-items: flex-start;
+    }
+
+    @include mobile {
+      height: auto;
+    }
   }
 
   // .calc__result-wrapper

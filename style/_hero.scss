@@ -1,8 +1,4 @@
 .hero {
-  --width-slide: 590px;
-  --height-slide: 530px;
-  --width-block: calc(50% - 10px);
-  --gap: 10px;
   padding-top: 0;
   overflow: hidden;
 
@@ -12,13 +8,18 @@
     position: relative;
     display: flex;
     gap: var(--gap);
+
+    @include tablet {
+      flex-direction: column;
+    }
   }
 
   // .hero_image
 
   &_image {
     width: var(--width-slide);
-    height: var(--height-slide);
+    max-width: 100%;
+    height: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -32,6 +33,10 @@
     flex-direction: column;
     align-items: flex-start;
     width: var(--width-block);
+
+    @include tablet {
+      width: 100%;
+    }
   }
 
   // .hero__slider-block
@@ -40,13 +45,31 @@
     position: absolute;
     left: calc(var(--width-block) + var(--gap) / 2);
     width: calc(((var(--width-block) + var(--gap)) * 2) - var(--gap));
-    // max-width: var(--width-block);
+    height: 100%;
+
+    @include tablet {
+      position: static;
+      height: 280px;
+    }
+
+    @include mobile {
+      width: var(--width-slide);
+      margin: auto;
+    }
   }
 
   // .hero__title
 
   &__title {
     margin-bottom: 32px;
+
+    @include laptop {
+      margin-bottom: 24px;
+    }
+
+    @include tablet {
+      margin-bottom: 16px;
+    }
   }
 
   // .hero__description
@@ -55,12 +78,26 @@
     text-transform: uppercase;
     margin-bottom: 32px;
     flex-grow: 1;
+
+    @include laptop {
+      margin-bottom: 98px;
+    }
+
+    @include tablet {
+      margin-bottom: 50px;
+    }
+
+    @include mobile {
+      font-size: 12px;
+      margin-bottom: 24px;
+    }
   }
 
   // .hero__slider-wrapper
 
-  &__slider-wrapper {
+  &__slider {
     position: relative;
+    height: 100%;
   }
 
   // hero__arrow 
@@ -68,12 +105,18 @@
   &__arrow {
     position: absolute;
     width: 96px;
-    left: calc(var(--width-slide) - 50px);
+    left: calc(var(--width-slide) - var(--padding));
     transform: translateX(-100%);
-    bottom: 50px;
+    bottom: var(--padding);
     display: flex;
     gap: 8px;
     z-index: 3;
+
+    @include laptop {
+      left: auto;
+      right: var(--padding);
+      transform: none;
+    }
   }
 
   // .hero__slider-btn
