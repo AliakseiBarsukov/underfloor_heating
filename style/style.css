@@ -28,7 +28,9 @@ html {
   scroll-behavior: smooth;
 }
 
-*, ::after, ::before {
+*,
+::after,
+::before {
   box-sizing: inherit;
 }
 
@@ -41,12 +43,15 @@ body {
   line-height: 1.5;
 }
 
-h1, h2, p {
+h1,
+h2,
+p {
   margin: 0;
   padding: 0;
 }
 
-ul, li {
+ul,
+li {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -60,6 +65,12 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
 }
 
 .container {
@@ -162,6 +173,21 @@ img {
   .title {
     font-size: 24px;
   }
+}
+
+.span__text {
+  font-size: 12px;
+  color: #898989;
+  margin-bottom: 2px;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 @font-face {
@@ -420,11 +446,6 @@ img {
     margin-bottom: 16px;
   }
 }
-.calc__fieldset {
-  margin: 0;
-  padding: 0;
-  border: none;
-}
 .calc__fieldset_size {
   margin-bottom: 32px;
   display: flex;
@@ -468,11 +489,6 @@ img {
     display: flex;
     flex-direction: column;
   }
-}
-.calc__text {
-  font-size: 12px;
-  color: #898989;
-  margin-bottom: 2px;
 }
 .calc__text_legend {
   margin-bottom: 16px;
@@ -672,4 +688,76 @@ img {
 .footer__developer {
   grid-area: developer;
   gap: 8px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 50;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+  overflow-y: hidden;
+  padding: 6px;
+}
+.modal .modal__main {
+  position: relative;
+  margin: auto;
+  max-width: 790px;
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  cursor: default;
+  overflow: hidden;
+}
+.modal .modal__container {
+  display: flex;
+}
+.modal .modal__container::after {
+  content: "";
+  flex: 0 0 350px;
+  background-image: url("./../img/modal__bg-desc.jpeg");
+  background-size: cover;
+}
+.modal .modal__content {
+  padding: 30px;
+}
+.modal .modal__title {
+  font-size: 34px;
+  margin-bottom: 24px;
+}
+.modal .modal__subtitle {
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.modal .modal__fieldset {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  border: 0;
+}
+.modal .modal__wrapper-input {
+  position: relative;
+  padding-bottom: 20px;
+  flex-basis: 50%;
+}
+.modal .modal__input {
+  width: 100%;
+  height: 54px;
+  border: 1px solid #E4E4E4;
+  border-radius: 12px;
+  padding: 0 25px;
+}
+.modal .modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: 0;
+  transition: opacity 0.3s ease-out;
+  cursor: pointer;
+}
+.modal .modal__close:hover {
+  opacity: 0.5;
 }/*# sourceMappingURL=style.css.map */
