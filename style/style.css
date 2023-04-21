@@ -736,7 +736,7 @@ input::-webkit-inner-spin-button {
   overflow-y: hidden;
   padding: 6px;
 }
-.modal .modal__main {
+.modal__main {
   position: relative;
   margin: auto;
   max-width: 790px;
@@ -747,77 +747,87 @@ input::-webkit-inner-spin-button {
   cursor: default;
   overflow: hidden;
 }
-.modal .modal__container {
+.modal__container {
   display: flex;
 }
 @media (max-width: 560px) {
-  .modal .modal__container {
+  .modal__container {
     flex-direction: column;
   }
 }
-.modal .modal__container::after {
+.modal__container::after {
   content: "";
   flex: 0 0 350px;
   background-image: url("./../img/modal__bg-desc.jpeg");
+  background-position: center;
   background-size: cover;
 }
 @media (max-width: 920px) {
-  .modal .modal__container::after {
+  .modal__container::after {
     flex: 0 0 192px;
     background-image: url("./../img/modal__bg-tablet.jpeg");
   }
 }
 @media (max-width: 560px) {
-  .modal .modal__container::after {
+  .modal__container::after {
     background-image: url("./../img/modal__bg-mobile.jpeg");
   }
 }
-.modal .modal__content {
+.modal__content {
   padding: 30px;
 }
-.modal .modal__title {
+.modal__title {
   font-size: 34px;
   margin-bottom: 24px;
 }
 @media (max-width: 560px) {
-  .modal .modal__title {
+  .modal__title {
     font-size: 24px;
     margin-bottom: 16px;
   }
 }
-.modal .modal__subtitle {
+.modal__subtitle {
   text-transform: uppercase;
   margin-bottom: 32px;
 }
 @media (max-width: 560px) {
-  .modal .modal__subtitle {
+  .modal__subtitle {
     margin-bottom: 16px;
   }
 }
-.modal .modal__fieldset {
+.modal__text {
+  text-transform: uppercase;
+  margin-top: 40px;
+}
+@media (max-width: 560px) {
+  .modal__text {
+    margin-top: 40px;
+  }
+}
+.modal__fieldset {
   display: flex;
   gap: 10px;
   margin-bottom: 12px;
   border: 0;
 }
 @media (max-width: 560px) {
-  .modal .modal__fieldset {
+  .modal__fieldset {
     flex-direction: column;
   }
 }
-.modal .modal__wrapper-input {
+.modal__wrapper-input {
   position: relative;
   padding-bottom: 20px;
   flex-basis: 50%;
 }
-.modal .modal__input {
+.modal__input {
   width: 100%;
   height: 54px;
   border: 1px solid #E4E4E4;
   border-radius: 12px;
   padding: 0 25px;
 }
-.modal .modal__close {
+.modal__close {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -826,10 +836,10 @@ input::-webkit-inner-spin-button {
   transition: opacity 0.3s ease-out;
   cursor: pointer;
 }
-.modal .modal__close:hover {
+.modal__close:hover {
   opacity: 0.5;
 }
-.modal .modal__input-error {
+.modal__input-error {
   position: absolute;
   bottom: 0;
   right: 0;

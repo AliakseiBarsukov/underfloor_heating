@@ -8,7 +8,7 @@
   overflow-y: hidden;
   padding: 6px;
 
-  .modal {
+
 
 		// .modal__main
 
@@ -37,6 +37,7 @@
         content: '';
         flex: 0 0 350px;
         background-image: url('./../img/modal__bg-desc.jpeg');
+        background-position: center;
         background-size: cover;
 
         @include tablet {
@@ -78,6 +79,16 @@
         margin-bottom: 16px;
       }
 		}
+		// .modal__text
+
+		&__text {
+      text-transform: uppercase;
+      margin-top: 40px;
+
+      @include mobile {
+        margin-top: 40px;
+      }
+		}
 
 		// .modal__fieldset
 
@@ -110,11 +121,6 @@
       padding: 0 25px;
 		}
 
-		// .modal__submit
-
-		&__submit {
-		}
-
 		// .modal__close
 
 		&__close {
@@ -137,5 +143,4 @@
       right: 0;
       font-size: 12px;
     }
-  }
 }

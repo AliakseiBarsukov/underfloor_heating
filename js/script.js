@@ -31,7 +31,6 @@ const totalPrice = document.querySelector('.js-total-price');
 const calcResultWrapper = document.querySelector('.calc__result-wrapper');
 const calcOrder = document.querySelector('.calc__order');
 const btnSubmit = document.querySelector('.js-submit');
-console.log('btnSubmit: ', btnSubmit);
 
 const tariff = {
   economy: 550,
@@ -84,7 +83,7 @@ const scrollController = {
 }
 
 
-const modalController = ({modal, btnOpen, btnClose, time = 300}) => {
+const modalController = ({modal, btnOpen, btnClose, modalSubmit, time = 300}) => {
   const buttonElems = document.querySelectorAll(btnOpen);
   const modalElem = document.querySelector(modal);
 
@@ -101,6 +100,7 @@ const modalController = ({modal, btnOpen, btnClose, time = 300}) => {
     if (
       target === modalElem ||
       (btnClose && target.closest(btnClose)) ||
+      // (modalSubmit && target.closest(modalSubmit)) ||
       event.code === 'Escape'
       ) {
       
@@ -133,6 +133,7 @@ modalController({
   modal: '.modal', 
   btnOpen: '.js-order', 
   btnClose: '.modal__close', 
+  modalSubmit: '.modal__submit',
 });
 
 
@@ -185,6 +186,7 @@ validator.addField('#phone', [
 
 validator.onSuccess((event) => {
   const form = event.currentTarget;
+  const modalContent = document.querySelector('.modal__content');
 
   fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
@@ -199,6 +201,15 @@ validator.onSuccess((event) => {
     .then((response) => response.json())
     .then((data) => {
       form.reset();
-      alert(`Спасибо мы с вами свяжимся, ваша заявка под номером ${data.id}`)
+
+      modalContent.innerHTML = '';
+      const responseText = document.createElement('div');
+      responseText.className = 'modal__res';
+      responseText.innerHTML = `
+        <h2 class="modal__title">Спасибо за доверие!</h2> 
+        <p class="modal__subtitle">Наши менеджеры с вами скоро свяжутся.</p>
+        <p class="modal__text">Номер Вашей заявки ${data.id}</p>
+      `;
+      modalContent.append(responseText)
     });
   })
