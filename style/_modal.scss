@@ -29,11 +29,24 @@
 		&__container {
       display: flex;
 
+      @include mobile {
+        flex-direction: column;
+      }
+
       &::after {
         content: '';
         flex: 0 0 350px;
         background-image: url('./../img/modal__bg-desc.jpeg');
         background-size: cover;
+
+        @include tablet {
+          flex: 0 0 192px;
+          background-image: url('./../img/modal__bg-tablet.jpeg');
+        }
+
+        @include mobile {
+          background-image: url('./../img/modal__bg-mobile.jpeg');
+        }
       }
 		}
 
@@ -48,6 +61,11 @@
 		&__title {
       font-size: 34px;
       margin-bottom: 24px;
+
+      @include mobile {
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
 		}
 
 		// .modal__subtitle
@@ -55,11 +73,10 @@
 		&__subtitle {
       text-transform: uppercase;
       margin-bottom: 32px;
-		}
 
-		// .modal__form
-
-		&__form {
+      @include mobile {
+        margin-bottom: 16px;
+      }
 		}
 
 		// .modal__fieldset
@@ -69,6 +86,10 @@
       gap: 10px;
       margin-bottom: 12px;
       border: 0;
+
+      @include mobile {
+        flex-direction: column;
+      }
 		}
 
 		// .modal__wrapper-input
@@ -109,5 +130,12 @@
         opacity: .5;
       }
 		}
+
+    &__input-error {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: 12px;
+    }
   }
 }

@@ -29,12 +29,20 @@ const calcForm = document.querySelector('.js-calc-form');
 const totalSquare = document.querySelector('.js-square');
 const totalPrice = document.querySelector('.js-total-price');
 const calcResultWrapper = document.querySelector('.calc__result-wrapper');
+const calcOrder = document.querySelector('.calc__order');
+const btnSubmit = document.querySelector('.js-submit');
+console.log('btnSubmit: ', btnSubmit);
 
 const tariff = {
   economy: 550,
   comfort: 1400,
   premium: 2700,
 }
+
+calcForm.addEventListener('input', () => {
+  btnSubmit.disabled = !(calcForm.width.value > 0 &&
+    calcForm.lenght.value > 0);
+})
 
 calcForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -46,7 +54,8 @@ calcForm.addEventListener('submit', (event) => {
       totalSquare.textContent = `${square} кв м`;
       totalPrice.textContent = `${totalSum} руб`;
       }
-      calcResultWrapper.style.display = 'block';
+      calcResultWrapper.classList.add('calc__result-wrapper_show');
+      calcOrder.classList.add('calc__order_show');
 })
 
 
@@ -124,4 +133,72 @@ modalController({
   modal: '.modal', 
   btnOpen: '.js-order', 
   btnClose: '.modal__close', 
-})
+});
+
+
+// mask phone
+
+const phone = document.querySelector('#phone');
+const imPhone = new Inputmask('+7(999)999-99-99');
+
+imPhone.mask(phone);
+
+
+const validator = new JustValidate('.modal__form', {
+  errorLabelCssClass: 'modal__input-error',
+  errorLabelStyle: {
+    color: '#ffc700',
+  }
+});
+
+
+validator.addField('#name', [
+    {
+      rule: 'required',
+      errorMessage: 'Введите имя',
+    },
+    {
+      rule: 'minLength',
+      value: 3,
+      errorMessage: 'Не менее 3 символов',
+    },
+    {
+      rule: 'maxLength',
+      value: 25,
+      errorMessage: 'Слишком длинное имя',
+    },
+  ])
+
+validator.addField('#phone', [
+    {
+      rule: 'required',
+      errorMessage: 'Введите номер',
+    },
+    {
+      validator: value => {
+        const number = phone.inputmask.unmaskedvalue()
+        return number.length === 10;
+      },
+      errorMessage: 'Номер не корректный',
+    }
+  ]);
+
+validator.onSuccess((event) => {
+  const form = event.currentTarget;
+
+  fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: JSON.stringify({
+      name: form.name.value,
+      phone: form.phone.value,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      form.reset();
+      alert(`Спасибо мы с вами свяжимся, ваша заявка под номером ${data.id}`)
+    });
+  })

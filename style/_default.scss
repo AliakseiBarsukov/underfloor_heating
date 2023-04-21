@@ -67,7 +67,7 @@ fieldset {
 }
 
 .link {
-  transition: all .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
 
   &:hover {
     opacity: 0.8;
@@ -81,6 +81,29 @@ fieldset {
   background-color: $yellow;
   border: none;
   cursor: pointer;
+  border: 1px solid transparent;
+  outline: none;
+  transition: transform .2s ease-in-out;
+  transition: opacity .3s ease-in-out;
+
+  &:focus-visible {
+    border-color: #9e7b00;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: translate(2px, 2px);
+  }
+
+  &:disabled {
+    pointer-events: none;
+    color: #898989;
+    background-color: #E0E0E0;
+    border-color: #E0E0E0;
+  }
 
   @include tablet {
     padding: 10px 24px;

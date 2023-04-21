@@ -121,6 +121,12 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
+    outline: none;;
+    transition: border-color .3s ease ;
+
+    &:hover, &:focus {
+      border-color: $yellow;
+    }
 
     @include laptop {
       width: 100%;
@@ -153,7 +159,6 @@
     width: 24px;
     height: 24px;
     margin-right: 8px;
-
 
     &::before {
       content: '';
@@ -189,11 +194,6 @@
     }
   }
 
-  // .calc__btn
-
-  &__btn {
-  }
-
   // .calc__total
 
   &__total {
@@ -208,10 +208,6 @@
       height: 220px;
       align-items: flex-start;
     }
-
-    @include mobile {
-      height: auto;
-    }
   }
 
   // .calc__result-wrapper
@@ -222,6 +218,10 @@
     padding: 24px;
     background: #FFFFFF;
     border-radius: 8px;
+
+    &_show {
+      display: block;
+    }
   }
 
   // .calc__result
@@ -238,8 +238,14 @@
     }
   }
 
-  // .calc__result-text
+  //calc__order_show
 
-  &__result-text {
+  &__order {
+    display: none;
+    margin-left: 10px;
+
+    &_show {
+      display: inline-block;
+    }
   }
 }
